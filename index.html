@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ss logo generator</title>
+<style>
+  body { margin: 0; font: 16px/1.4 system-ui, sans-serif; background: #f4f4f4; color: #111; }
+  main { max-width: 520px; margin: 0 auto; padding: 32px 16px; }
+  h1 { font-size: 20px; margin: 0 0 20px; }
+  .row { display: flex; gap: 12px; margin-bottom: 12px; }
+  label { flex: 1; display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 6px 8px; }
+  input[type=color] { width: 32px; height: 32px; border: 0; padding: 0; background: none; cursor: pointer; }
+  input[type=text] { flex: 1; min-width: 0; border: 0; font: inherit; font-family: ui-monospace, monospace; outline: none; }
+  label.bad { border-color: #d00; }
+  .preview { border-radius: 8px; padding: 24px; margin: 8px 0 16px;
+    background-color: #fff;
+    background-image: linear-gradient(45deg,#e6e6e6 25%,transparent 25%,transparent 75%,#e6e6e6 75%),linear-gradient(45deg,#e6e6e6 25%,transparent 25%,transparent 75%,#e6e6e6 75%);
+    background-size: 20px 20px; background-position: 0 0, 10px 10px; }
+  .preview svg { display: block; width: 100%; height: auto; }
+  button { flex: 1; font: inherit; padding: 10px; border-radius: 8px; border: 1px solid #111; background: #111; color: #fff; cursor: pointer; }
+  button.alt { background: #fff; color: #111; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ss logo generator</h1>
+  <div class="row">
+    <label id="la"><input type="color" id="pa" value="#568bfc"><input type="text" id="ta" value="#568BFC" spellcheck="false" aria-label="left colour"></label>
+    <label id="lb"><input type="color" id="pb" value="#ff0073"><input type="text" id="tb" value="#FF0073" spellcheck="false" aria-label="right colour"></label>
+  </div>
+  <div class="preview">
+    <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 688 582">
+      <path id="a" fill="#568BFC" fill-rule="evenodd" d="M181.4 572.9C173.6 571.6 163.5 567.1 147.9 557.8C125.9 544.7 118.4 541.4 99.3 536.5C68.1 528.4 46.0 509.4 30.5 477.5C25.1 466.4 23.4 459.9 21.5 442.9C19.3 423.4 18.2 418.0 13.3 402.6C7.9 385.5 6.9 375.3 9.4 361.1C11.2 350.9 15.6 339.3 20.0 333.2C23.3 328.7 29.1 326.5 41.5 325.1C62.9 322.7 104.1 333.2 112.5 343.2C115.1 346.3 115.3 347.7 117.0 367.8C119.3 396.3 126.0 411.7 144.1 430.0C174.9 461.3 198.6 448.8 211.6 394.5C214.3 383.6 214.1 368.1 211.2 359.8C208.6 352.2 201.3 340.5 195.4 334.3C190.5 329.2 185.3 327.6 155.5 322.0C128.9 317.0 119.4 314.8 107.6 310.8C98.5 307.8 69.1 293.3 55.1 284.9C44.8 278.8 33.7 268.2 30.4 261.4C27.8 256.2 27.7 255.4 28.3 244.7C28.6 238.5 30.0 226.3 31.4 217.6C34.1 201.1 34.7 186.5 33.0 179.5C30.4 168.8 28.9 154.6 28.3 135.5C27.8 117.9 28.0 113.1 29.4 106.0C34.8 79.5 51.0 49.5 66.2 38.2C77.0 30.1 83.5 27.9 107.0 24.5C124.7 21.9 127.8 21.1 145.0 15.9C159.4 11.5 177.6 8.0 186.0 8.0C195.8 8.1 201.4 10.1 212.6 17.7C223.5 25.2 225.5 26.1 250.7 34.5C281.9 45.0 296.0 52.9 312.1 68.9C317.7 74.5 324.1 82.2 327.5 87.3C333.1 95.9 340.6 110.9 342.9 118.2C344.4 122.9 345.7 123.7 347.6 121.4C348.9 119.7 349.0 121.4 348.6 136.5C348.3 145.8 347.6 157.3 347.0 162.0C346.5 166.7 345.5 174.8 345.0 180.0C344.4 185.2 343.5 192.4 343.1 196.0C340.9 212.1 340.7 215.4 342.0 223.8C342.7 228.6 343.7 232.9 344.1 233.5C344.6 234.0 345.0 235.0 345.0 235.7C345.0 236.5 345.9 239.0 347.0 241.2C350.6 248.8 350.4 249.1 337.2 253.3C323.4 257.8 311.6 259.2 298.7 257.9C276.1 255.6 264.5 249.9 258.6 238.1C255.4 231.9 254.2 225.2 253.1 208.5C252.6 200.5 251.5 192.6 250.5 190.0C247.8 182.5 239.8 169.7 234.5 164.5C226.2 156.4 209.8 149.6 202.8 151.3C197.9 152.6 187.7 161.2 183.3 167.8C176.2 178.3 175.7 181.2 175.2 208.3C174.8 236.6 175.3 238.9 183.8 248.1C188.4 253.1 190.2 254.2 197.8 257.0C202.6 258.7 216.2 262.6 228.0 265.5C239.8 268.5 253.1 272.1 257.5 273.6C280.4 281.3 316.2 303.9 337.8 324.4C344.4 330.7 345.3 331.3 347.2 330.1C349.5 328.7 349.5 328.5 346.9 348.7C345.9 357.0 345.8 360.6 346.9 367.7C350.0 389.8 350.4 398.7 349.0 412.3C348.2 419.6 347.5 430.8 347.3 437.4C346.9 447.6 346.7 449.0 345.5 447.4C344.8 446.3 344.0 445.7 343.8 446.0C343.5 446.3 341.1 449.9 338.4 454.0C335.8 458.1 328.0 467.1 321.3 473.9C308.5 486.9 303.2 494.0 295.9 508.0C292.4 514.8 289.4 518.6 281.0 527.1C262.2 546.0 236.0 560.7 202.1 571.1C192.4 574.1 189.9 574.3 181.4 572.9Z"/>
+      <path id="b" fill="#FF0073" fill-rule="evenodd" d="M479.0 561.4C439.1 549.7 411.8 535.1 399.0 518.5C396.8 515.7 392.7 509.1 389.9 503.9C383.2 491.4 378.5 485.4 367.1 474.0C356.3 463.3 351.8 457.9 347.1 450.1L343.8 444.7L344.3 433.1C344.5 426.7 345.3 416.4 346.0 410.3C347.3 398.8 346.7 388.0 343.9 372.5C342.6 365.3 343.3 343.6 345.0 336.5C346.0 332.6 347.6 330.2 352.4 325.2C370.6 306.4 399.0 286.7 423.0 276.3C433.0 271.9 443.3 268.8 469.5 262.0C496.1 255.2 498.6 254.2 503.6 248.7C505.9 246.1 508.9 241.3 510.2 238.2C512.2 233.1 512.5 230.9 512.4 217.0C512.3 202.1 512.2 200.9 508.1 185.5C503.0 166.1 501.0 161.7 495.9 158.3C490.7 154.9 485.1 154.0 475.7 155.0C462.5 156.5 458.5 160.0 449.8 177.5C442.9 191.3 440.3 198.5 438.1 210.5C435.4 224.5 431.8 232.2 424.5 238.9C417.8 244.9 403.5 253.7 397.2 255.6C388.5 258.3 375.3 257.1 354.9 251.8L346.3 249.6L344.2 244.7C343.0 242.0 342.0 239.3 342.0 238.6C342.0 237.9 341.6 237.0 341.1 236.5C340.7 235.9 339.7 231.6 339.0 226.8C337.7 218.1 338.0 207.1 340.0 193.0C340.5 189.4 341.4 182.2 342.0 177.0C342.5 171.8 343.4 163.7 344.0 159.0C344.6 154.3 345.3 144.7 345.6 137.5C346.1 126.6 346.7 123.1 349.3 115.6C357.7 91.3 373.1 69.3 391.9 55.1C408.2 42.7 416.3 39.1 445.5 31.4C457.8 28.2 461.0 27.7 471.5 27.7C479.2 27.7 489.3 28.5 499.5 30.0C513.8 32.1 516.5 32.2 524.7 31.2C529.9 30.5 540.0 28.1 548.1 25.5C555.9 23.0 564.2 20.7 566.5 20.3C571.8 19.6 590.7 22.4 598.2 25.1C606.4 27.9 618.9 35.2 624.8 40.5C640.1 54.3 654.6 82.1 659.0 106.4C660.6 115.3 659.9 130.4 656.1 169.0C654.5 185.2 652.9 201.9 652.5 206.0C648.6 251.4 634.0 279.2 603.5 299.7C585.6 311.8 569.0 316.9 520.0 325.4C498.3 329.2 496.1 330.0 489.8 336.8C483.5 343.7 478.8 352.2 476.5 361.0C473.4 372.6 475.8 410.0 480.6 426.8C487.9 452.1 503.8 457.3 529.1 442.8C538.2 437.6 544.5 431.3 548.8 422.9C567.3 387.3 569.9 380.0 571.5 359.0C572.6 344.3 574.4 341.5 586.2 336.0C594.3 332.2 616.6 326.5 629.5 325.0C645.8 323.0 662.5 326.4 668.1 332.7C674.9 340.5 680.0 355.8 680.0 369.0C680.0 376.2 678.4 386.5 674.6 404.0C673.2 410.3 670.9 423.1 669.5 432.5C665.3 459.7 661.0 473.2 650.4 491.4C635.4 517.2 620.9 527.9 590.0 536.0C570.8 540.9 563.3 543.5 542.8 552.2C510.2 565.9 499.5 567.5 479.0 561.4Z"/>
+    </svg>
+  </div>
+  <div class="row">
+    <button id="png">Download PNG</button>
+    <button id="svgdl" class="alt">Download SVG</button>
+  </div>
+</main>
+<script>
+const logo = document.getElementById('logo');
+const PNG_WIDTH = 2000;
+
+// accepts 568bfc, #568bfc, #58f and any css colour name the browser knows
+function parse(v) {
+  v = v.trim();
+  if (/^[0-9a-f]{3}([0-9a-f]{3})?$/i.test(v)) v = '#' + v;
+  const s = new Option().style;
+  s.color = v;
+  if (!s.color) return null;
+  const c = document.createElement('canvas').getContext('2d');
+  c.fillStyle = v;
+  return c.fillStyle.toUpperCase();
+}
+
+function hook(k) {
+  const pick = document.getElementById('p' + k), text = document.getElementById('t' + k);
+  const label = document.getElementById('l' + k), path = document.getElementById(k);
+  text.addEventListener('input', () => {
+    const c = parse(text.value);
+    label.classList.toggle('bad', !c);
+    if (!c) return;
+    path.setAttribute('fill', c);
+    if (c.startsWith('#')) pick.value = c.toLowerCase();
+  });
+  pick.addEventListener('input', () => {
+    text.value = pick.value.toUpperCase();
+    label.classList.remove('bad');
+    path.setAttribute('fill', text.value);
+  });
+}
+hook('a'); hook('b');
+
+function svgText() {
+  return new XMLSerializer().serializeToString(logo);
+}
+
+function name(ext) {
+  const f = id => document.getElementById(id).getAttribute('fill').replace('#', '');
+  return `ss-${f('a')}-${f('b')}.${ext}`.toLowerCase();
+}
+
+function save(blob, filename) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+document.getElementById('svgdl').onclick = () =>
+  save(new Blob([svgText()], { type: 'image/svg+xml' }), name('svg'));
+
+document.getElementById('png').onclick = () => {
+  const [, , w, h] = logo.getAttribute('viewBox').split(' ').map(Number);
+  const img = new Image();
+  img.onload = () => {
+    const c = document.createElement('canvas');
+    c.width = PNG_WIDTH;
+    c.height = Math.round(PNG_WIDTH * h / w);
+    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+    c.toBlob(b => save(b, name('png')), 'image/png');
+  };
+  img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgText());
+};
+</script>
+</body>
+</html>
